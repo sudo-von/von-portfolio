@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "prettier": "^3.3.3",
+    "pretty-quick": "^4.0.0"
+  },
+  "name": "rush-prettier",
+  "private": true,
+  "version": "0.0.0"
+}
