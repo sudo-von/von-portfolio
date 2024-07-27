@@ -15,6 +15,10 @@
     {
       "packageName": "ask-service",
       "projectFolder": "services/ask-service"
+    },
+    {
+      "packageName": "portfolio-service",
+      "projectFolder": "services/portfolio-service"
     }
   ],
   "repository": {

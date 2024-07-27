@@ -1,0 +1,30 @@
+{
+  "author": "Jesús Ángel Rodríguez Martínez",
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "description": "A portfolio service highlighting projects and skills.",
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5"
+  },
+  "keywords": [
+    "ask-service",
+    "portfolio-service"
+  ],
+  "name": "portfolio-service",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "lint": "next lint",
+    "start:development": "next dev",
+    "start:production": "next start"
+  },
+  "version": "0.0.0"
+}
