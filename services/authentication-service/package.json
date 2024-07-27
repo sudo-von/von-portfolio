@@ -1,0 +1,23 @@
+{
+  "author": "Jesús Ángel Rodríguez Martínez",
+  "description": "A secure authentication service designed to manage user identities and access controls.",
+  "devDependencies": {
+    "@types/node": "~20.14.11",
+    "nodemon": "~3.1.4",
+    "ts-node": "~10.9.2",
+    "typescript": "~5.5.3"
+  },
+  "keywords": [
+    "authentication",
+    "authentication-service",
+    "users"
+  ],
+  "name": "authentication-service",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start:development": "nodemon src/app.ts",
+    "start:production": "node dist/app.js"
+  },
+  "version": "0.0.0"
+}

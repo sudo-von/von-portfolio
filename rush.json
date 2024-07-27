@@ -17,6 +17,10 @@
       "projectFolder": "services/ask-service"
     },
     {
+      "packageName": "authentication-service",
+      "projectFolder": "services/authentication-service"
+    },
+    {
       "packageName": "portfolio-service",
       "projectFolder": "services/portfolio-service"
     }
