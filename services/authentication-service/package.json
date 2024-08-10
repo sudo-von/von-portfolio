@@ -5,7 +5,8 @@
     "@types/node": "~20.14.11",
     "nodemon": "~3.1.4",
     "ts-node": "~10.9.2",
-    "typescript": "~5.5.3"
+    "typescript": "~5.5.3",
+    "tsconfig-paths": "~4.2.0"
   },
   "keywords": [
     "authentication",
@@ -16,7 +17,7 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "start:development": "nodemon src/app.ts",
+    "start:development": "nodemon",
     "start:production": "node dist/app.js"
   },
   "version": "0.0.0"
