@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
     "outDir": "dist",
+    "paths": {
+      "@domain/*": ["src/domain/*"]
+    },
     "skipLibCheck": true,
     "strict": true,
     "target": "es2016"
