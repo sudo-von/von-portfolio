@@ -8,11 +8,11 @@ export abstract class AbstractUserValidation {
     throw new InvalidUserMethodNotImplementedYetError();
   }
 
-  public validateUsername(_username: string): void {
+  public validatePassword(_password: string): void {
     throw new InvalidUserMethodNotImplementedYetError();
   }
 
-  public validatePassword(_password: string): void {
+  public validateUsername(_username: string): void {
     throw new InvalidUserMethodNotImplementedYetError();
   }
 }
