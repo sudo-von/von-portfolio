@@ -27,6 +27,15 @@ export class InvalidUserNameLengthError extends Error {
   }
 }
 
+export class InvalidUserPasswordError extends Error {
+  constructor() {
+    super({
+      code: 'INVALID_USER_PASSWORD',
+      message: `Please provide a password that contains at least one uppercase letter and one symbol.`
+    });
+  }
+}
+
 export class InvalidUserPasswordLengthError extends Error {
   constructor(maxLength: number, minLength: number) {
     super({
