@@ -4,6 +4,6 @@ import { AbstractUserValidation } from '@domain/user/user-validation/user-valida
 export abstract class AbstractUser {
   constructor(
     protected user: IUser,
-    protected validateUser: AbstractUserValidation
+    protected userValidation: AbstractUserValidation
   ) {}
 }
