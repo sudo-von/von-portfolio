@@ -1,4 +1,4 @@
-export type IUserDetails = {
+export interface IUserDetails {
   hobby: string;
   occupation: string;
-};
+}
