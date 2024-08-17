@@ -1,0 +1,11 @@
+{
+  "collectCoverageFrom": ["src/**/*.{.js,ts}", "!src/**/*.d.ts"],
+  "coverageDirectory": "coverage",
+  "coverageReporters": ["lcov"],
+  "moduleNameMapper": {
+    "^@domain/(.*)$": "<rootDir>/src/domain/$1"
+  },
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "testMatch": ["**/?(*.)+(test).ts"]
+}
