@@ -1,7 +1,7 @@
-import { IError } from '@domain/error/error.interface';
+import { IError } from '@domain/error/interfaces/error.interface';
 
 export abstract class AbstractError extends Error {
-  constructor(protected error: IError) {
+  constructor(public error: IError) {
     const { message } = error;
     super(message);
   }
