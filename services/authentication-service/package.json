@@ -22,8 +22,9 @@
     "build": "tsc",
     "start:development": "nodemon",
     "start:production": "node dist/app.js",
-    "test:unit": "jest",
-    "test:unit:coverage": "jest --coverage"
+    "unit:test": "jest",
+    "unit:test:coverage": "jest --coverage",
+    "unit:test:watch": "jest --watch"
   },
   "version": "0.0.0"
 }
