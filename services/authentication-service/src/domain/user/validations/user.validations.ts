@@ -9,7 +9,7 @@ import { InvalidUserPasswordUppercaseRequired } from '@domain/user/errors/invali
 import { InvalidUserUsernameHyphensLettersOnly } from '@domain/user/errors/invalid-user-username-hyphens-letters-only.error';
 import { InvalidUserUsernameLength } from '@domain/user/errors/invalid-user-username-length.error';
 import { InvalidUserUsernameNoLeadingHyphen } from '@domain/user/errors/invalid-user-username-no-leading-hypen.error';
-import { InvalidUserUsernameNoTrailinggHyphen } from '@domain/user/errors/invalid-user-username-no-trailing-hypen.error';
+import { InvalidUserUsernameNoTrailingHyphen } from '@domain/user/errors/invalid-user-username-no-trailing-hypen.error';
 
 export class UserValidations implements IUserValidations {
   constructor(public userRules: IUserRules) {}
@@ -73,7 +73,7 @@ export class UserValidations implements IUserValidations {
     }
 
     if (formattedUsername.endsWith('-')) {
-      throw new InvalidUserUsernameNoTrailinggHyphen();
+      throw new InvalidUserUsernameNoTrailingHyphen();
     }
   }
 }

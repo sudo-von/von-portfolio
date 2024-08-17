@@ -1,6 +1,6 @@
 import { Error } from '@domain/error/entities/error.entity';
 
-export class InvalidUserUsernameNoTrailinggHyphen extends Error {
+export class InvalidUserUsernameNoTrailingHyphen extends Error {
   constructor() {
     super({
       code: 'INVALID_USER_USERNAME_NO_TRAILING_HYPHEN',
