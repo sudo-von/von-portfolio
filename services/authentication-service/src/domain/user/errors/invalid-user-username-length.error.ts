@@ -1,7 +1,7 @@
 import { Error } from '@domain/error/entities/error.entity';
 import { userUsernameRule } from '@domain/user/rules/user.username.rule';
 
-export class InvalidUserUsernameLengthError extends Error {
+export class InvalidUserUsernameLength extends Error {
   constructor() {
     super({
       code: 'INVALID_USER_USERNAME_LENGTH',
