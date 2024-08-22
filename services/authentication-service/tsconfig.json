@@ -6,6 +6,7 @@
     "module": "commonjs",
     "outDir": "dist",
     "paths": {
+      "@application/*": ["src/application/*"],
       "@domain/*": ["src/domain/*"]
     },
     "skipLibCheck": true,
