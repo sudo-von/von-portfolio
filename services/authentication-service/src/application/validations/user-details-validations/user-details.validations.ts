@@ -1,5 +1,5 @@
-import { InvalidUserDetailsHobbyLength } from '@domain/errors/user-details-errors/invalid-user-details-hobby-length.error';
-import { InvalidUserDetailsOccupationLength } from '@domain/errors/user-details-errors/invalid-user-details-occupation-length.error';
+import { UserDetailsHobbyLengthError } from '@domain/errors/user-details-errors/user-details-hobby-length.error';
+import { UserDetailsOccupationLengthError } from '@domain/errors/user-details-errors/user-details-occupation-length.error';
 import { IUserDetailsValidations } from '@domain/validations/user-details-validations/user-details.validations';
 import { IUserDetailsRules } from '@domain/rules/user-details-rules/user-details.rules';
 
@@ -13,7 +13,7 @@ export class UserDetailsValidations implements IUserDetailsValidations {
     const { LENGTH } = this.userDetailsRules.hobby;
 
     if (formattedHobbyLength < LENGTH.MIN || formattedHobbyLength > LENGTH.MAX) {
-      throw new InvalidUserDetailsHobbyLength();
+      throw new UserDetailsHobbyLengthError();
     }
   }
 
@@ -24,7 +24,7 @@ export class UserDetailsValidations implements IUserDetailsValidations {
     const { LENGTH } = this.userDetailsRules.hobby;
 
     if (formattedOccupationLength < LENGTH.MIN || formattedOccupationLength > LENGTH.MAX) {
-      throw new InvalidUserDetailsOccupationLength();
+      throw new UserDetailsOccupationLengthError();
     }
   }
 }

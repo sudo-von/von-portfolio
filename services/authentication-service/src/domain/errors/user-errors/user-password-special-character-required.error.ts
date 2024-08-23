@@ -1,10 +1,10 @@
-import { Error } from '@domain/error/entities/error.entity';
+import { DomainError } from '@domain/errors/error';
 import { userPasswordRule } from '@domain/rules/user-rules/user.password.rule';
 
-export class InvalidUserPasswordSpecialCharacterRequired extends Error {
+export class UserPasswordSpecialCharacterRequiredError extends DomainError {
   constructor() {
     super({
-      code: 'INVALID_USER_PASSWORD_SPECIAL_CHARACTER_REQUIRED',
+      code: 'USER_PASSWORD_SPECIAL_CHARACTER_REQUIRED_ERROR',
       message: `Please provide a password that contains at least one special character from the following list: ${userPasswordRule.ALLOWED_SPECIAL_CHARACTERS.join(',')}.`
     });
   }

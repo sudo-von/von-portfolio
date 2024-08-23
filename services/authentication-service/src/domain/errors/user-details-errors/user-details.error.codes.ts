@@ -1,0 +1,3 @@
+export type UserDetailsErrorCodes =
+  | 'USER_DETAILS_HOBBY_LENGTH_ERROR'
+  | 'USER_DETAILS_OCCUPATION_LENGTH_ERROR';

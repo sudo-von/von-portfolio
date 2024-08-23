@@ -1,15 +1,15 @@
 import { IUserRules } from '@domain/rules/user-rules/user.rules';
 import { IUserValidations } from '@domain/validations/user-validations/user.validations';
-import { InvalidUserNameLength } from '@domain/errors/user-errors/invalid-user-name-length.error';
-import { InvalidUserName } from '@domain/errors/user-errors/invalid-user-name.error';
-import { InvalidUserPasswordLength } from '@domain/errors/user-errors/invalid-user-password-length.error';
-import { InvalidUserPasswordNumberRequired } from '@domain/errors/user-errors/invalid-user-password-number-required.error';
-import { InvalidUserPasswordSpecialCharacterRequired } from '@domain/errors/user-errors/invalid-user-password-special-character-required.error';
-import { InvalidUserPasswordUppercaseRequired } from '@domain/errors/user-errors/invalid-user-password-uppercase-required.error';
-import { InvalidUserUsernameHyphensLettersOnly } from '@domain/errors/user-errors/invalid-user-username-hyphens-letters-only.error';
-import { InvalidUserUsernameLength } from '@domain/errors/user-errors/invalid-user-username-length.error';
-import { InvalidUserUsernameNoLeadingHyphen } from '@domain/errors/user-errors/invalid-user-username-no-leading-hypen.error';
-import { InvalidUserUsernameNoTrailingHyphen } from '@domain/errors/user-errors/invalid-user-username-no-trailing-hypen.error';
+import { UserNameLengthError } from '@domain/errors/user-errors/user-name-length.error';
+import { UserNameError } from '@domain/errors/user-errors/user-name.error';
+import { UserPasswordLengthError } from '@domain/errors/user-errors/user-password-length.error';
+import { UserPasswordNumberRequiredError } from '@domain/errors/user-errors/user-password-number-required.error';
+import { UserPasswordSpecialCharacterRequiredError } from '@domain/errors/user-errors/user-password-special-character-required.error';
+import { UserPasswordUppercaseRequiredError } from '@domain/errors/user-errors/user-password-uppercase-required.error';
+import { UserUsernameHyphensLettersOnlyError } from '@domain/errors/user-errors/user-username-hyphens-letters-only.error';
+import { UserUsernameLengthError } from '@domain/errors/user-errors/user-username-length.error';
+import { UserUsernameNoLeadingHyphenError } from '@domain/errors/user-errors/user-username-no-leading-hypen.error';
+import { UserUsernameNoTrailingHyphenError } from '@domain/errors/user-errors/user-username-no-trailing-hypen.error';
 
 export class UserValidations implements IUserValidations {
   constructor(public userRules: IUserRules) {}
@@ -21,11 +21,11 @@ export class UserValidations implements IUserValidations {
     const { LENGTH, REG_EXP } = this.userRules.name;
 
     if (formattedNameLength < LENGTH.MIN || formattedNameLength > LENGTH.MAX) {
-      throw new InvalidUserNameLength();
+      throw new UserNameLengthError();
     }
 
     if (!REG_EXP.LETTERS_ONLY.test(formattedName)) {
-      throw new InvalidUserName();
+      throw new UserNameError();
     }
   }
 
@@ -36,21 +36,21 @@ export class UserValidations implements IUserValidations {
     const { ALLOWED_SPECIAL_CHARACTERS, LENGTH, REG_EXP } = this.userRules.password;
 
     if (formattedPasswordLength < LENGTH.MIN || formattedPasswordLength > LENGTH.MAX) {
-      throw new InvalidUserPasswordLength();
+      throw new UserPasswordLengthError();
     }
 
     if (!REG_EXP.NUMBER_REQUIRED.test(formattedPassword)) {
-      throw new InvalidUserPasswordNumberRequired();
+      throw new UserPasswordNumberRequiredError();
     }
 
     if (
       !ALLOWED_SPECIAL_CHARACTERS.some((specialCharacter) => formattedPassword.includes(specialCharacter))
     ) {
-      throw new InvalidUserPasswordSpecialCharacterRequired();
+      throw new UserPasswordSpecialCharacterRequiredError();
     }
 
     if (!REG_EXP.UPPERCASE_REQUIRED.test(formattedPassword)) {
-      throw new InvalidUserPasswordUppercaseRequired();
+      throw new UserPasswordUppercaseRequiredError();
     }
   }
 
@@ -61,19 +61,19 @@ export class UserValidations implements IUserValidations {
     const { LENGTH, REG_EXP } = this.userRules.username;
 
     if (formattedUsernameLength < LENGTH.MIN || formattedUsernameLength > LENGTH.MAX) {
-      throw new InvalidUserUsernameLength();
+      throw new UserUsernameLengthError();
     }
 
     if (!REG_EXP.HYPHENS_LETTERS_ONLY.test(formattedUsername)) {
-      throw new InvalidUserUsernameHyphensLettersOnly();
+      throw new UserUsernameHyphensLettersOnlyError();
     }
 
     if (formattedUsername.startsWith('-')) {
-      throw new InvalidUserUsernameNoLeadingHyphen();
+      throw new UserUsernameNoLeadingHyphenError();
     }
 
     if (formattedUsername.endsWith('-')) {
-      throw new InvalidUserUsernameNoTrailingHyphen();
+      throw new UserUsernameNoTrailingHyphenError();
     }
   }
 }
