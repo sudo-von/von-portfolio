@@ -3,14 +3,16 @@ import { IDetailedUserRepository } from '@domain/repositories/detailed-user-repo
 import { IPasswordService } from '@domain/services/password-services/password.service';
 import { IUserCreation } from '@domain/entities/user-entities/user-creation.entity';
 import { IUserCredentials } from '@domain/entities/user-credentials-entities/user-credentials.entity';
+import { IUserValidationService } from '@domain/services/user-validation-services/user-validation.service';
 
 export abstract class AbstractAuthenticationUsecase {
   constructor(
     protected readonly detailedUserRepository: IDetailedUserRepository,
-    protected readonly passwordService: IPasswordService
+    protected readonly passwordService: IPasswordService,
+    protected readonly userValidationService: IUserValidationService
   ) {}
 
-  abstract signup: (payload: IUserCreation) => Promise<IDetailedSecureUser>;
+  abstract signup: (userCreation: IUserCreation) => Promise<IDetailedSecureUser>;
 
-  abstract signin: (credentials: IUserCredentials) => Promise<IDetailedSecureUser>;
+  abstract signin: (userCredentials: IUserCredentials) => Promise<IDetailedSecureUser>;
 }

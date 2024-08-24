@@ -1,9 +1,9 @@
 import { UserDetailsHobbyLengthError } from '@domain/errors/user-details-errors/user-details-hobby-length.error';
 import { UserDetailsOccupationLengthError } from '@domain/errors/user-details-errors/user-details-occupation-length.error';
-import { IUserDetailsValidations } from '@domain/validations/user-details-validations/user-details.validations';
+import { IUserDetailsValidationService } from '@domain/services/user-details-validation-services/user-details-validation.service';
 import { IUserDetailsRules } from '@domain/rules/user-details-rules/user-details.rules';
 
-export class UserDetailsValidations implements IUserDetailsValidations {
+export class UserDetailsValidationService implements IUserDetailsValidationService {
   constructor(public userDetailsRules: IUserDetailsRules) {}
 
   public validateHobby(hobby: string): void {

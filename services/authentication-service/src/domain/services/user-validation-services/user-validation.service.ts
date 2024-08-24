@@ -1,11 +1,11 @@
 import { IUserRules } from '@domain/rules/user-rules/user.rules';
 
-export interface IUserValidationsReader {
+export interface IUserValidationServiceReader {
   validateName: (name: string) => void;
   validatePassword: (password: string) => void;
   validateUsername: (username: string) => void;
 }
 
-export interface IUserValidations extends IUserValidationsReader {
+export interface IUserValidationService extends IUserValidationServiceReader {
   userRules: IUserRules;
 }

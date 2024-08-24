@@ -1,5 +1,5 @@
 import { IUserRules } from '@domain/rules/user-rules/user.rules';
-import { IUserValidations } from '@domain/validations/user-validations/user.validations';
+import { IUserValidationService } from '@domain/services/user-validation-services/user-validation.service';
 import { UserNameLengthError } from '@domain/errors/user-errors/user-name-length.error';
 import { UserNameError } from '@domain/errors/user-errors/user-name.error';
 import { UserPasswordLengthError } from '@domain/errors/user-errors/user-password-length.error';
@@ -11,7 +11,7 @@ import { UserUsernameLengthError } from '@domain/errors/user-errors/user-usernam
 import { UserUsernameNoLeadingHyphenError } from '@domain/errors/user-errors/user-username-no-leading-hypen.error';
 import { UserUsernameNoTrailingHyphenError } from '@domain/errors/user-errors/user-username-no-trailing-hypen.error';
 
-export class UserValidations implements IUserValidations {
+export class UserValidationService implements IUserValidationService {
   constructor(public userRules: IUserRules) {}
 
   public validateName(name: string): void {
