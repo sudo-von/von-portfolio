@@ -1,5 +1,5 @@
 import { AbstractAuthenticationUsecase } from '@domain/usecases/authentication-usecases/authentication.usecase';
-import { detailedUserToDetailedSecureUser } from '@domain/mappers/detailed-user-to-detailed-secure-user.mapper';
+import { detailedUserToDetailedSecureUser } from '@domain/mappers/detailed-user-mappers/detailed-user-to-detailed-secure-user.mapper';
 import { DetailedUserUsernameAlreadyInUseError } from '@domain/errors/detailed-user/detailed-user-username-already-in-use.error';
 import { IDetailedSecureUser } from '@domain/entities/detailed-secure-user-entities/detailed-secure-user.entity';
 import { IDetailedUserRepository } from '@domain/repositories/detailed-user-repositories/detailed-user.repository';

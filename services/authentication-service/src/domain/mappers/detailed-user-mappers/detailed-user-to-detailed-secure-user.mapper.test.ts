@@ -1,6 +1,6 @@
 import { IDetailedSecureUser } from '@domain/entities/detailed-secure-user-entities/detailed-secure-user.entity';
 import { IDetailedUser } from '@domain/entities/detailed-user-entities/detailed-user.entity';
-import { detailedUserToDetailedSecureUser } from '@domain/mappers/detailed-user-to-detailed-secure-user.mapper';
+import { detailedUserToDetailedSecureUser } from '@domain/mappers/detailed-user-mappers/detailed-user-to-detailed-secure-user.mapper';
 
 describe('detailedUserToDetailedSecureUser', () => {
   it('Should return the expected detailed secure user', () => {
